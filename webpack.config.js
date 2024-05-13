@@ -9,10 +9,11 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
+            template: './src/index.html',
             filename: "index.html",
             title: "Restaurant",
             inject: 'body',
-        })
+        }),
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -24,6 +25,10 @@ module.exports = {
           {
             test: /\.css$/i,
             use: ['style-loader', 'css-loader'],
+          },
+          {
+            test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            type: 'asset/resource',
           },
         ],
       },

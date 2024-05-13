@@ -4,13 +4,13 @@ import './styles.css';
 
 startCoding();
 
-function component() {
-    const element = document.createElement('h1');
+// function component() {
+//     const element = document.createElement('h1');
  
-   // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+//    // Lodash, now imported by this script
+//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
  
-    return element;
-  }
+//     return element;
+//   }
  
-document.body.appendChild(component());
+// document.body.appendChild(component());
