@@ -1,17 +1,122 @@
-/* @font-face {
-    font-family: 'MyFont';
-    src: url('./my-font.woff2') format('woff2'),
-      url('./my-font.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-.hello {
-     color: red;
-    font-family: 'MyFont';
-     background: url('./icon.png');
-   } */
+@font-face {
+  font-family: 'Quattrocento_Sans';
+  src: url('./Quattrocento_Sans/QuattrocentoSans-Regular.ttf') format('ttf');
+      font-weight: 600;
+      font-style: normal;
+}
 
-h1 {
-    color: red;
-   }
+* {
+  font-family: 'Quattrocento_Sans', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: azure;
+}
+
+body {
+  background-color: #171717;
+}
+
+header {
+  background-color: #ec4899;
+  height: 70px;
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 594px;
+  margin-bottom: 50px;
+  padding: 30px;
+}
+
+nav button {
+  border: 2px solid azure;
+  background-color: #be185d;
+  height: 42px;
+  text-align: center;
+  width: 100px;
+  margin: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+footer {
+  height: 70px;
+  background-color: #ec4899;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+#content {
+  width: 60%;
+  display: flex;
+  margin: 30px auto;
+  background-color: #ec4899;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+#content h1 {
+  border: 5px solid #4c0519;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+  margin: 30px;
+  border-radius: 15px;
+}
+.intro {
+  width: 50%;
+  align-self: center;
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 6px solid #4c0519;
+  border-radius: 30px;
+}
+.intro p:first-child {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.intro p:last-child {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 10px;
+}
+.operation-time {
+  border: 6px solid #4c0519;
+  width: 50%;
+  padding: 0.625rem;
+  border-radius: 1.875rem;
+  margin-bottom: 30px;
+}
+.operation-time h3 {
+  font-size: 1.3rem;
+  padding: 10px 20px 10px 40px;
+}
+.work-hours {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
+}
+.location {
+  border: 6px solid #4c0519;
+  border-radius: 0.625rem;
+  width: 50%;
+  padding: 0.625rem;
+  margin-bottom: 30px;
+}
+.location h3 {
+  font-size: 1.3rem;
+  padding: 10px 20px 10px 40px;
+}
+.location p {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
