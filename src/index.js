@@ -1,16 +1,24 @@
-import { initializeProject as startCoding } from "./loader";
-import _ from 'lodash';
+import { initializeProject as loadHomepage } from "./loader";
 import './styles.css';
+import { showMenu } from "./menu";
+import { showContact } from "./contacts";
 
-startCoding();
+// Load homepage
+loadHomepage();
 
-// function component() {
-//     const element = document.createElement('h1');
- 
-//    // Lodash, now imported by this script
-//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
- 
-//     return element;
-//   }
- 
-// document.body.appendChild(component());
+let navigationButtons = document.querySelectorAll('nav button');
+let contentHolder = document.querySelector('#content');
+
+navigationButtons.forEach((button) => {
+    button.addEventListener('click', () => switchTabs(button));
+});
+
+function switchTabs(button) {
+    let buttonType = button.getAttribute('class');
+    contentHolder.textContent = '';
+    console.log(buttonType);
+    if (buttonType === 'home') loadHomepage();
+    if (buttonType === 'menu') showMenu();
+    if (buttonType === 'contact') showContact();
+    return;
+}
