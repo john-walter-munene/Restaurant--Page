@@ -6,6 +6,8 @@ module.exports = {
     entry: {
         index: './src/index.js',
         loader: './src/loader.js',
+        menu: './src/menu.js',
+        contacts: './src/contacts.js',
     },
     plugins: [
         new HTMLWebpackPlugin({
