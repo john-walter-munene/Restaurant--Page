@@ -167,7 +167,7 @@ footer a {
 
 .food-item {
   width: 60%;
-  height: 250px;
+  height: 525px;
   border: 13px solid #4c0519;
   align-self: center;
   padding-top: 2rem;
@@ -194,6 +194,12 @@ footer a {
   font-size: 1.2rem;
   padding-bottom: 1rem;
   padding-left: 0;
+}
+
+.menu-img {
+  height: 250px;
+  width: 250px;
+  border-radius: 25px;
 }
 
 .contact-item {
