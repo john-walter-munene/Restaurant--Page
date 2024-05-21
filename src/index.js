@@ -6,17 +6,16 @@ import { showContact } from "./contacts";
 // Load homepage
 loadHomepage();
 
+// Get naivation buttons, attach listeners
 let navigationButtons = document.querySelectorAll('nav button');
-let contentHolder = document.querySelector('#content');
-
 navigationButtons.forEach((button) => {
     button.addEventListener('click', () => switchTabs(button));
 });
 
 function switchTabs(button) {
-    let buttonType = button.getAttribute('class');
+    let contentHolder = document.querySelector('#content');
     contentHolder.textContent = '';
-    console.log(buttonType);
+    let buttonType = button.getAttribute('class');
     if (buttonType === 'home') loadHomepage();
     if (buttonType === 'menu') showMenu();
     if (buttonType === 'contact') showContact();

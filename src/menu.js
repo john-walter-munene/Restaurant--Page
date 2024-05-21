@@ -1,8 +1,28 @@
+// Import all image assets.
+// beers
+import brothersBondPic from './Images/beers/brothersBond.jpeg';
+import woodFordPic from './Images/beers/woodFord.jpeg';
+import bulleitBourbonPic from './Images/beers/bulleitBourbon.jpeg';
+import makersMarkPic from './Images/beers/woodFord.jpeg';
+// Beverages
+import beerTeaPic from './Images/beverages/beerPlaceTea.jpg';
+import honeyTeaPic from './Images/beverages/honeyTea.jpeg';
+// Side dishes
+import toastAndJamPic from './Images/sides/toastAndJam.jpeg';
+import freshFruitPic from './Images/sides/freshFruit.jpeg';
+// Main dishes
+import classicCheesePic from './Images/mains/classicCheeseBugger.jpg';
+import grilledChickenPic from './Images/mains/grilledChicken.jpg';
+import spaghettiCarbonaraPic from './Images/mains/spaghettiCarbonara.jpg';
+import veggiesPizzaPic from './Images/mains/veggieDelightPizza.jpg';
+
+
 class Food {
-    constructor(name, description, price) {
+    constructor(name, description, price, imagePath) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.imagePath = imagePath;
     }
 
     renderFoodComponent() {
@@ -24,8 +44,17 @@ class Food {
         foodComponent.appendChild(foodDescription);
         foodComponent.appendChild(foodPrice);
 
+        foodComponent.appendChild(this.getImage());
+
         return foodComponent;
-    };
+    }
+
+    getImage() {
+      const myImage = new Image();
+      myImage.src = this.imagePath;
+      myImage.setAttribute('class', 'menu-img');
+     return myImage;   
+    }
 }
 
 // Create Beers store and stock it...
@@ -34,24 +63,28 @@ let brothersBond = new Food (
     "Brother's Bond Bourbon",
     "A smooth and flavorful bourbon with hints of vanilla and caramel, handcrafted by Brother's Bond Spirits.",
     "39.99 USD",
+    brothersBondPic,
 );
 
 let woodFord = new Food (
     "Woodford Reserve Bourbon",
     "A premium bourbon known for its balanced flavor profile and smooth finish, produced by Woodford Reserve Distillery.",
     "29.99 USD",
+    woodFordPic,
 );
 
 let bulletBeer = new Food (
     "Bulleit Bourbon",
     "A distinctive bourbon with a high rye content, offering a bold and spicy flavor profile, crafted by Bulleit Distilling Co.",
     "24.99 USD",
+    bulleitBourbonPic,
 );
 
 let makersMark = new Food (
     "Maker's Mark Bourbon",
     "An iconic bourbon with a sweet and mellow taste, featuring a hand-dipped red wax seal, produced by Maker's Mark Distillery.",
     "27.99 USD",
+    makersMarkPic,
 );
 
 beers.push(brothersBond, woodFord, bulletBeer, makersMark);
@@ -62,6 +95,7 @@ let honeyTea = new Food (
     "Honey Tea",
     "A warm, sweet tea made with the highest quality honey and a bit of lemon to start your day off right!",
     "2.99 USD",
+    honeyTeaPic,
 );
 
 let beerPlaceTea = new Food (
@@ -69,6 +103,7 @@ let beerPlaceTea = new Food (
     "A comforting, almost filling, tea that is infused with the flavors of several kinds of berries.\
     Best served cold, but can be served hot on request.",
     "3.50 USD",
+    beerTeaPic,
 );
 
 beverages.push(honeyTea, beerPlaceTea);
@@ -79,12 +114,14 @@ let toastAndJam = new Food(
     "Toast and Jam",
     "A slice of toast, your choice of bread, and our homemade blackberry or raspberry jam.",
     "1.99 USD",
+    toastAndJamPic,
 );
 
 let freshFruit = new Food (
     "Fresh Fruit",
     "A small bowl of fresh fruit, whatever we find at the market for the day.",
     "3.60 USD",
+    freshFruitPic,
 );
 
 sideDishes.push(toastAndJam, freshFruit);
@@ -97,6 +134,7 @@ let grilledChicken = new Food (
     "A fresh and vibrant salad featuring grilled chicken, mixed greens, cherry tomatoes,\
     cucumbers, and a light balsamic vinaigrette. Perfect for a healthy and satisfying meal.",
     "50.99 USD",
+    grilledChickenPic,
 );
 
 let cheeseBurger = new Food (
@@ -104,6 +142,7 @@ let cheeseBurger = new Food (
     "A juicy beef patty topped with melted cheddar cheese, lettuce, tomato, onion, and pickles,\
     all nestled in a toasted sesame seed bun. Served with a side of crispy fries.",
     "15.99 USD",
+    classicCheesePic,
 );
 
 let delightPizza = new Food (
@@ -112,6 +151,7 @@ let delightPizza = new Food (
     mushrooms, and olives, finished with a sprinkle of mozzarella cheese. Available with a \
     gluten-free crust upon request.", 
     "12.99 USD",
+    veggiesPizzaPic,
 );
 
 let spaghettiCarbo = new Food (
@@ -119,6 +159,7 @@ let spaghettiCarbo = new Food (
     "A rich and creamy pasta dish made with spaghetti, pancetta, eggs, and Parmesan cheese.\
     Garnished with fresh parsley and black pepper for a comforting and indulgent experience.",
     "11.99 USD",
+    spaghettiCarbonaraPic,
 );
 
 mainDishes.push(grilledChicken, cheeseBurger, delightPizza, spaghettiCarbo,);
